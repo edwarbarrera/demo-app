@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+
+    <p id="p1">paragraphe1</p>
+    <p class="p2">paragraphe2</p>
+    <p>pppppp3</p>
+
+    <div id="table"></div>
+    <button onclick="alert('hola')">btouton 1</button>
+    <button onclick="createTableMulti()">btouton 23</button>
+
+
+    <script>
+        function createTableMulti(){
+        /*window.open ("http://www.google.com","xhamster");
+          let msg =prompt("msg?")
+          alert (msg);
+        let p1 = document.querySelector("#p1");
+        p1.innerHTML = "<strong> paragraphe1</strong>"
+        p1.style.color = "red";*/
+// on cree un eleement de type table
+        let table = document.createElement("table");
+        for (let i = 1; i <= 10; i++) {
+            // on cree un eleement de type tr
+             let row = document.createElement("tr");
+              for (let j = 1; j <= 10; j++) { 
+                  // on cree un eleement de type td
+                  let cell = document.createElement("td");
+                  // on ajoute i*j dans td
+                   cell.appendChild(document.createTextNode(i * j));
+                   // on  ajoute td dans tr
+                    row.appendChild(cell); 
+                }
+                // on ajoute tr dans table
+                 table.appendChild(row); 
+            } 
+            document.getElementById("table").appendChild(table);
+
+        }
+// /*  </script>
+//     <input type="button" onclick="console.log('clicked')">
+//     <input type="button" onclick="showMessage()">
+//     <script>functionshowMessage() 
+//         console.log("hello world");
+//         }</script> */
+</body>
+
+</html>
